@@ -2,7 +2,6 @@ import React from 'react'
 import './base.css'
 import Container from './container'
 import Navigation from './navigation'
-import "fontsource-m-plus-rounded-1c"
 
 class Template extends React.Component {
   render() {
