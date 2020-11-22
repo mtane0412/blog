@@ -37,6 +37,9 @@
     "type": "git",
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
+  "resolutions": {
+    "sharp": "0.24.0"
+  },
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
