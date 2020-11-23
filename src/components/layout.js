@@ -2,7 +2,7 @@ import React from 'react'
 import './base.css'
 import Container from './container'
 import Navigation from './navigation'
-import "prismjs/themes/prism-tomorrow.css"
+import './prism-tomorrow.css'
 
 class Template extends React.Component {
   render() {

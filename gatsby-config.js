@@ -29,15 +29,6 @@ module.exports = {
   },
   pathPrefix: "/gatsby-contentful-starter",
   plugins: [
-    "gatsby-transformer-remark",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
-    {
-      resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
-    },
-    "gatsby-plugin-twitter",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -75,5 +66,13 @@ module.exports = {
         ],
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-contentful",
+      options: contentfulConfig,
+    },
+    "gatsby-plugin-twitter",
   ],
 };
