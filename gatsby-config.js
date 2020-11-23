@@ -63,6 +63,9 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          {
+            resolve: `gatsby-remark-embedder`,
+          },
         ],
       },
     },
