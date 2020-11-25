@@ -65,6 +65,13 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-embedder`,
+            options: {
+              services: {
+                Instagram: {
+                  accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
+                },
+              },
+            },
           },
         ],
       },
