@@ -77,5 +77,6 @@ module.exports = {
       options: contentfulConfig,
     },
     "gatsby-plugin-twitter",
+    "gatsby-plugin-instagram-embed",
   ],
 };
