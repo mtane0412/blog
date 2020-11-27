@@ -3,7 +3,7 @@ name: Build Gatsby and deploy to Netlify
 on:
   push:
     branches:
-      - master
+      - main
   repository_dispatch:
 
 jobs:
