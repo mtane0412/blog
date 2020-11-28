@@ -21,7 +21,7 @@ jobs:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
       - name: Publish
-        uses: netlify/actions/cli@main
+        uses: netlify/actions/cli@master
         with:
           args: deploy --dir=site --functions=functions
         env:
