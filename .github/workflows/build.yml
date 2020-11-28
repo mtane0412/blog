@@ -1,10 +1,10 @@
 name: Build Gatsby and deploy to Netlify
 
 on:
-  repository_dispatch:
   push:
     branches:
       - main
+  repository_dispatch:
 
 jobs:
   build:
