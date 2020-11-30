@@ -39,7 +39,10 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(
+        sort: { fields: [publishDate], order: DESC }
+        limit: 12
+      ) {
       edges {
         node {
           title
@@ -47,7 +50,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: THUMB) {
               ...GatsbyContentfulFluid
             }
           }
