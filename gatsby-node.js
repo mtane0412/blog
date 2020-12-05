@@ -10,9 +10,17 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allContentfulBlogPost {
+            allContentfulBlogPost(sort: {fields: publishDate, order: ASC}) {
               edges {
                 node {
+                  title
+                  slug
+                }
+                next {
+                  title
+                  slug
+                }
+                previous {
                   title
                   slug
                 }
@@ -33,6 +41,8 @@ exports.createPages = ({ graphql, actions }) => {
             component: blogPost,
             context: {
               slug: post.node.slug,
+              next: post.next,
+              previous: post.previous
             },
           })
         })

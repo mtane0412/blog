@@ -1,22 +1,30 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
+import PrevNext from '../components/prevnext'
 import Iframely from '../components/iframely'
 
 import heroStyles from '../components/hero.module.css'
 
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-
+    const prev = this.props.pageContext.previous
+    const next = this.props.pageContext.next
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
+          <SEO
+            title={post.title}
+            desc={post.description.childMarkdownRemark.excerpt || ' '}
+            image={post.heroImage.fluid}
+            pathname={post.slug}
+            article
+          />
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
@@ -38,6 +46,7 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
+            <PrevNext prev={prev} next={next} />
           </div>
         </div>
         <Iframely />
@@ -58,9 +67,15 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
+      slug
       body {
         childMarkdownRemark {
           html
+        }
+      }
+      description {
+        childMarkdownRemark {
+          excerpt
         }
       }
     }
