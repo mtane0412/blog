@@ -61,6 +61,14 @@ module.exports = {
   // pathPrefix: "/gatsby-contentful-starter",
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-58041716-1",
+        head: true,
+        cookieDomain: "mtane0412.com",
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -131,6 +139,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-emotion`
   ],
 };
