@@ -1,4 +1,5 @@
 import React from 'react'
+import AdSense from 'react-adsense';
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
@@ -45,6 +46,13 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
+            />
+            <AdSense.Google
+              client='ca-pub-7686072564110741'
+              slot='1215564505'
+              style={{ display: 'block' }}
+              format='auto'
+              responsive='true'
             />
             <PrevNext prev={prev} next={next} />
           </div>
