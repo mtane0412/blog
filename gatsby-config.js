@@ -30,8 +30,8 @@ const banner = 'static/logo.png';
 const favicon = 'static/favicon.png';
 const shortName = 'mtane0412blog';
 const author = 'mtane0412';
-const themeColor = '#3e7bf';
-const backgroundColor = '#d3e0f';
+const themeColor = '#339ad6';
+const backgroundColor = '#339ad6';
 const twitter = '@mtane0412';
 
 if (!spaceId || !accessToken) {
