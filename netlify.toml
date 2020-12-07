@@ -1,6 +1,7 @@
 [Settings]
   ID = "9cc53a59-0deb-4f54-9887-0432f33fbd16"
 
-[Build]
-  Publish = ""
-  Functions = ""
+[[headers]]
+for = "/*"
+[headers.values]
+Access-Control-Allow-Origin = "*"
