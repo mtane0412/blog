@@ -47,6 +47,7 @@ class BlogPostTemplate extends React.Component {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
+            <PrevNext prev={prev} next={next} />
             <AdSense.Google
               client='ca-pub-7686072564110741'
               slot='1215564505'
@@ -54,7 +55,6 @@ class BlogPostTemplate extends React.Component {
               format='auto'
               responsive='true'
             />
-            <PrevNext prev={prev} next={next} />
           </div>
         </div>
         <Iframely />
