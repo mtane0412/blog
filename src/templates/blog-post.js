@@ -18,14 +18,14 @@ class BlogPostTemplate extends React.Component {
     const next = this.props.pageContext.next
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <SEO
+        <SEO
             title={post.title}
             desc={post.description.childMarkdownRemark.excerpt || ' '}
             image={post.heroImage.fluid}
             pathname={post.slug}
             article
           />
+        <div style={{ background: '#fff' }}>
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
