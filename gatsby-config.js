@@ -65,8 +65,7 @@ module.exports = {
       options: {
         trackingId: "UA-58041716-1",
         head: true,
-        defer: true,
-        cookieDomain: "mtane0412.com",
+        defer: true
       },
     },
     {
