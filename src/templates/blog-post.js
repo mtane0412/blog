@@ -42,6 +42,13 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
+            <AdSense.Google
+              client='ca-pub-7686072564110741'
+              slot='9203727556'
+              style={{ display: 'block', textAlign: 'center' }}
+              layout='in-article'
+              format='fluid'
+            />
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
