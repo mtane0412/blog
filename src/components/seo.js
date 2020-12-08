@@ -27,8 +27,8 @@ const SEO = ({ title, desc, banner, pathname, article }) => (
         const seo = {
             title: title ? title + ' | ' + defaultTitle : defaultTitle,
             description: desc || defaultDescription,
-            image: banner ? banner : `${siteUrl}${defaultBanner}`,
-            url: pathname ? `${siteUrl}${pathname}` : siteUrl,
+            image: banner ? banner : `${siteUrl}${pathPrefix}${defaultBanner}`,
+            url: pathname ? `${siteUrl}${pathPrefix}${pathname}` : siteUrl,
             };
             const realPrefix = pathPrefix === '/' ? '' : pathPrefix;
             let schemaOrgJSONLD = [
@@ -138,7 +138,7 @@ const query = graphql`
         author
         siteLanguage
         logo
-        siteUrl
+        siteUrl: url
         pathPrefix
         defaultDescription: description
         defaultBanner: banner
