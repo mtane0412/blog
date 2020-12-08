@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
         <SEO
             title={post.title}
             desc={post.description.childMarkdownRemark.excerpt || ' '}
-            image={post.heroImage.fluid}
+            banner={'https:' + post.heroImage.file.url}
             pathname={post.slug}
             article
           />
@@ -78,6 +78,9 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
+        file {
+          url
+        }
         fluid(maxWidth: 1180, background: "rgb:000000") {
           ...GatsbyContentfulFluid_withWebp
         }
