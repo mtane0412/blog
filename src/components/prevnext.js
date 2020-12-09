@@ -28,12 +28,12 @@ const PrevNext = ({ prev, next }) => {
   return (
     <Wrapper>
         <Box>
-            {next &&
-                <Link to={'../' + next.slug}>&#8592; {next.title}</Link>
-            }
-            {prev &&
-                <Link to={'../' + prev.slug}>{prev.title} &#8594;</Link>
-            }
+            {next && (
+                <Link to={'../' + next.slug} style={{marginRight: 'auto', order: 1}}>&#8592; {next.title}</Link>
+            )}
+            {prev && (
+                <Link to={'../' + prev.slug} style={{marginLeft: 'auto', order: 2}}>{prev.title} &#8594;</Link>
+            )}
         </Box>
     </Wrapper>
   )
