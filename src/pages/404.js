@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-class NotFoundIndex extends React.Component {
+class NotFoundPage extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
@@ -20,4 +20,4 @@ class NotFoundIndex extends React.Component {
   }
 }
 
-export default NotFoundIndex
+export default NotFoundPage
