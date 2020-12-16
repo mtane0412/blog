@@ -1,21 +1,36 @@
 import React from 'react'
 import AdSense from 'react-adsense';
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PrevNext from '../components/prevnext'
 import Iframely from '../components/iframely'
-
+import styled from '@emotion/styled'
 import heroStyles from '../components/hero.module.css'
 
+const Tag = styled.span`
+  display:inline-block;
+  margin-left:1em;
+  padding:.25em .5em;
+  border: solid 1.5px #373F49;
+  border-radius:.5em;
+  & > a{
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: #ccc;
+  }
+
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
-    const prev = this.props.pageContext.previous
-    const next = this.props.pageContext.next
+    const post = get(this.props, 'data.contentfulBlogPost');
+    const prev = this.props.pageContext.previous;
+    const next = this.props.pageContext.next;
+
     return (
       <Layout location={this.props.location}>
         <SEO
@@ -41,6 +56,9 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.publishDate}
+              {post.tags.map(tag =>
+                <Link to={`/tags/${tag.slug}`}><Tag>#{tag.title}</Tag></Link>
+              )}
             </p>
             <AdSense.Google
               client='ca-pub-7686072564110741'
@@ -76,7 +94,11 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      publishDate(formatString: "MMMM Do, YYYY")
+      publishDate(formatString: "YYYY年MM月DD日")
+      tags {
+        title
+        slug
+      }
       heroImage {
         file {
           url

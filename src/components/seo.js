@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-const SEO = ({ title, desc, banner, pathname, article }) => (
+const SEO = ({ title, desc, banner, pathname, article, noindex }) => (
   <StaticQuery
     query={query}
     render={({
@@ -86,6 +86,7 @@ const SEO = ({ title, desc, banner, pathname, article }) => (
                     <meta name="image" content={seo.image} />
                     <meta name="apple-mobile-web-app-title" content={shortName} />
                     <meta name="application-name" content={shortName} />
+                    {noindex && <meta name="robots" content="noindex, follow" />}
                     <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
         
                     {/* OpenGraph  */}
