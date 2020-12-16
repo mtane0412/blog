@@ -56,7 +56,7 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.publishDate}
-              {post.tags.map(tag =>
+              {post.tags && post.tags.map(tag =>
                 <Link to={`/tags/${tag.slug}`}><Tag>#{tag.title}</Tag></Link>
               )}
             </p>
