@@ -104,7 +104,7 @@ export const pageQuery = graphql`
           url
         }
         fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_withWebp
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
       slug

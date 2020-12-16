@@ -54,7 +54,7 @@ export const tagPageQuery = graphql`
             }
             heroImage {
                 fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: THUMB) {
-                    ...GatsbyContentfulFluid_withWebp
+                    ...GatsbyContentfulFluid_withWebp_noBase64
                 }
             }
             description {
@@ -69,7 +69,7 @@ export const tagPageQuery = graphql`
         title
         heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: THUMB) {
-                ...GatsbyContentfulFluid_withWebp
+                ...GatsbyContentfulFluid_withWebp_noBase64
             }
         }
     }

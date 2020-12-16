@@ -4,7 +4,7 @@ require("dotenv").config({
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN
 };
 
 // if you want to use the preview API please define
@@ -112,6 +112,12 @@ module.exports = {
               },
             },
           },
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 650
+            },
+          }
         ],
       },
     },
