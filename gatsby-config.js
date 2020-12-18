@@ -112,12 +112,6 @@ module.exports = {
               },
             },
           },
-          {
-            resolve: `gatsby-remark-images-contentful`,
-            options: {
-              maxWidth: 650
-            },
-          }
         ],
       },
     },
