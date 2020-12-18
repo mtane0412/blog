@@ -68,10 +68,24 @@ module.exports = {
         defer: true
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 650,
+              withWebp: true,
+            },
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -114,13 +128,6 @@ module.exports = {
           },
         ],
       },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: contentfulConfig,
     },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-instagram-embed`,
