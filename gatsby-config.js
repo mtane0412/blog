@@ -86,6 +86,7 @@ module.exports = {
               withWebp: true,
             },
           },
+          `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

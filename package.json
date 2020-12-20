@@ -21,6 +21,7 @@
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-plugin-sitemap": "^2.8.0",
     "gatsby-plugin-twitter": "^2.5.0",
+    "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-embedder": "^4.1.0",
     "gatsby-remark-images-contentful": "^2.7.0",
     "gatsby-remark-prismjs": "^3.8.0",

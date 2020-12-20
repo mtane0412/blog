@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        const tags = result.data.allContentfulTags.edges
+        const tags = result.data.allContentfulTags.edges;
         tags.forEach(tag => {
           createPage({
             path: `tags/${tag.node.slug}/`,
