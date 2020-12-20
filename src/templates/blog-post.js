@@ -2,7 +2,6 @@ import React from 'react'
 import AdSense from 'react-adsense';
 import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/plugins/command-line/prism-command-line.css'
@@ -10,7 +9,7 @@ import SEO from '../components/seo'
 import PrevNext from '../components/prevnext'
 import Iframely from '../components/iframely'
 import styled from '@emotion/styled'
-import heroStyles from '../components/hero.module.css'
+import Hero from '../components/hero'
 
 const Tag = styled.span`
   display:inline-block;
@@ -24,7 +23,6 @@ const Tag = styled.span`
   &:hover {
     background-color: #ccc;
   }
-
 `
 
 class BlogPostTemplate extends React.Component {
@@ -43,13 +41,7 @@ class BlogPostTemplate extends React.Component {
             article
           />
         <div style={{ background: '#fff' }}>
-          <div className={heroStyles.hero}>
-            <Img
-              className={heroStyles.heroImage}
-              alt={post.title}
-              fluid={post.heroImage.fluid}
-            />
-          </div>
+          <Hero data={post}/>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
             <p

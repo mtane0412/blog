@@ -1,20 +1,19 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+import styled from '@emotion/styled'
 
-import styles from './article-preview.module.css'
+const PreviewTitle = styled.h3`
+  font-size: 1.5em;
+`
 
 export default ({ article }) => (
-  <div className={styles.preview}>
+  <div>
     <Img alt="" fluid={article.heroImage.fluid} />
-    <h3 className={styles.previewTitle}>
+    <PreviewTitle>
       <Link to={`/${article.slug}`}>{article.title}</Link>
-    </h3>
+    </PreviewTitle>
     <small>{article.publishDate}</small>
-    <p
-      dangerouslySetInnerHTML={{
-        __html: article.description.childMarkdownRemark.html,
-      }}
-    />
+    <p>{article.description.childMarkdownRemark.excerpt}</p>
   </div>
-)
+);

@@ -1,10 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import styles from './blog.module.css'
+import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ArticlePreview from '../components/article-preview'
+
+
+const Hero = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 61.8vh;
+  max-height: 400px;
+  background: #e1e1e1;
+  font-size: 2em;
+  overflow: hidden;
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +26,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <SEO />
         <div style={{ background: '#fff' }}>
-          <div className={styles.hero}>Blog</div>
+          <Hero>Blog</Hero>
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
@@ -54,7 +66,7 @@ export const pageQuery = graphql`
           }
           description {
             childMarkdownRemark {
-              html
+              excerpt
             }
           }
         }

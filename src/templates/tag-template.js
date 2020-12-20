@@ -59,7 +59,7 @@ export const tagPageQuery = graphql`
             }
             description {
                 childMarkdownRemark {
-                    html
+                  excerpt
                 }
             }
           }
