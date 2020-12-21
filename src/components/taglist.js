@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 const TagList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
