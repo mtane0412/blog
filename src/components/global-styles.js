@@ -73,6 +73,12 @@ export const globalStyles = css`
   .list-inline li {
     display: inline-block;
   }
+
+  p code {
+    padding: 0 .5em;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background-color: #eee;
+  }
   
   .gatsby-code-title {
     margin-bottom: -0.6rem;
