@@ -1,27 +1,26 @@
 import React from 'react'
 import AdSense from 'react-adsense';
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/plugins/command-line/prism-command-line.css'
 import SEO from '../components/seo'
+import TagList from '../components/taglist'
 import PrevNext from '../components/prevnext'
 import Iframely from '../components/iframely'
 import styled from '@emotion/styled'
 import Hero from '../components/hero'
 
-const Tag = styled.span`
-  display:inline-block;
-  margin-left:1em;
-  padding:.25em .5em;
-  border: solid 1.5px #373F49;
-  border-radius:.5em;
-  & > a{
-    text-decoration: none;
-  }
-  &:hover {
-    background-color: #ccc;
+const PostHeader = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  time {
+    display: inline-block;
+    margin: 0.25em;
+    padding:.25em .5em;
   }
 `
 
@@ -44,16 +43,10 @@ class BlogPostTemplate extends React.Component {
           <Hero data={post}/>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
-              {post.publishDate}
-              {post.tags && post.tags.map(tag =>
-                <Link to={`/tags/${tag.slug}`}><Tag>#{tag.title}</Tag></Link>
-              )}
-            </p>
+            <PostHeader>
+              <time datetime={post.datetime}>{post.publishDate}</time>
+              <TagList tags={post.tags} />
+            </PostHeader>
             <AdSense.Google
               client='ca-pub-7686072564110741'
               slot='9203727556'
@@ -89,6 +82,7 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "YYYY年MM月DD日")
+      datetime: publishDate
       tags {
         title
         slug
