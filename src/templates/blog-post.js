@@ -10,7 +10,6 @@ import TagList from '../components/taglist'
 import PrevNext from '../components/prevnext'
 import Iframely from '../components/iframely'
 import styled from '@emotion/styled'
-import Hero from '../components/hero'
 
 const PostHeader = styled.div`
   display: flex;
@@ -23,6 +22,7 @@ const PostHeader = styled.div`
     padding:.25em .5em;
   }
 `
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -40,11 +40,10 @@ class BlogPostTemplate extends React.Component {
             article
           />
         <div style={{ background: '#fff' }}>
-          <Hero data={post}/>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
             <PostHeader>
-              <time datetime={post.datetime}>{post.publishDate}</time>
+              <time dateTime={post.datetime}>{post.publishDate}</time>
               <TagList tags={post.tags} />
             </PostHeader>
             <AdSense.Google
@@ -90,9 +89,6 @@ export const pageQuery = graphql`
       heroImage {
         file {
           url
-        }
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_withWebp
         }
       }
       slug

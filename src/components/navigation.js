@@ -1,6 +1,17 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { StaticQuery, graphql, Link } from "gatsby"
+import logo from '../../static/assets/logo.png'
+import Img from 'gatsby-image'
 import styled from '@emotion/styled'
+
+
+const SiteHeader = styled.header`
+  margin: 1.5em;
+  text-align: center;
+  img {
+    max-height: 50px;
+  }
+`
 
 const Navigation = styled.ul`
   display: flex;
@@ -8,32 +19,52 @@ const Navigation = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 20vh;
-  max-height: 100px;
   font-size: 1.25em;
 `
 
 const NavigationItem = styled.li`
   display: inline-flex;
   align-items: center;
-  margin: 0 1em;
+  padding: 0 1em;
   a {
     color: currentColor;
   }
 `
 
 export default () => (
-  <nav role="navigation">
-    <Navigation>
-      <NavigationItem>
-        <Link to="/">Home</Link>
-      </NavigationItem>
-      <NavigationItem>
-        <Link to="/blog/">Blog</Link>
-      </NavigationItem>
-      <NavigationItem>
-        <Link to="/tags/">Tags</Link>
-      </NavigationItem>
-    </Navigation>
-  </nav>
+  <StaticQuery
+    query={graphql`
+      query HeadingQuery {
+        site {
+          siteMetadata {
+            title
+            logo
+          }
+        }
+      }
+    `}
+    render={data => (
+      <SiteHeader>
+        <img
+          src={data.site.siteMetadata.logo}
+          alt={data.site.siteMetadata.title}
+          title={data.site.siteMetadata.title}
+        />
+        <nav role="navigation">
+          <Navigation>
+            <NavigationItem>
+              <Link to="/">Home</Link>
+            </NavigationItem>
+            <NavigationItem>
+              <Link to="/blog/">Blog</Link>
+            </NavigationItem>
+            <NavigationItem>
+              <Link to="/tags/">Tags</Link>
+            </NavigationItem>
+          </Navigation>
+        </nav>
+      </SiteHeader>
+    )}
+  />
 )
+

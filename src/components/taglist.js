@@ -29,7 +29,7 @@ export default ({ tags }) => (
   <TagList>
     {tags &&
       tags.map((tag) => (
-        <Tag>
+        <Tag key={tag.slug}>
           <Link to={`/tags/${tag.slug}`}>{tag.title}</Link>
         </Tag>
       ))}

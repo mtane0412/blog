@@ -18,11 +18,6 @@ export const globalStyles = css`
     margin: 0;
   }
 
-  img {
-    display: block;
-    width: 100%;
-  }
-
   h1,
   h2,
   h3 {
