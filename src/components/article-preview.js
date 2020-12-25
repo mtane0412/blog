@@ -13,7 +13,7 @@ const PreviewTitle = styled.h3`
 
 export default ({ article }) => (
   <Preview>
-    <Img alt="" fluid={article.heroImage.fluid} />
+    <Img alt="" fluid={article.heroImage.fluid} loading={"eager"} fadeIn={false} />
     <PreviewTitle>
       <Link to={`/${article.slug}`}>{article.title}</Link>
     </PreviewTitle>

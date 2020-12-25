@@ -51,6 +51,8 @@ export default () => (
           fixed={data.file.childImageSharp.fixed}
           alt={data.site.siteMetadata.title}
           title={data.site.siteMetadata.title}
+          loading={"eager"}
+          fadeIn={false}
         />
         <nav role="navigation">
           <Navigation>
