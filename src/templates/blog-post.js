@@ -16,6 +16,7 @@ const PostHeader = styled.div`
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 1em;
   time {
     display: inline-block;
     margin: 0.25em;
