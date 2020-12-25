@@ -68,9 +68,6 @@ module.exports = {
         defer: true
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -78,6 +75,9 @@ module.exports = {
         path: `${__dirname}/static/assets/`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
