@@ -1,6 +1,5 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from "gatsby"
-import logo from '../../static/assets/logo.png'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 
@@ -8,9 +7,6 @@ import styled from '@emotion/styled'
 const SiteHeader = styled.header`
   margin: 1.5em;
   text-align: center;
-  img {
-    max-height: 50px;
-  }
 `
 
 const Navigation = styled.ul`
@@ -35,6 +31,13 @@ export default () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
+        file(relativePath: { eq: "logo.png" }) {
+          childImageSharp {
+            fixed(width: 240, height: 50) {
+              ...GatsbyImageSharpFixed_withWebp_noBase64
+            }
+          }
+        }    
         site {
           siteMetadata {
             title
@@ -44,8 +47,8 @@ export default () => (
     `}
     render={data => (
       <SiteHeader>
-        <img
-          src={logo}
+        <Img
+          fixed={data.file.childImageSharp.fixed}
           alt={data.site.siteMetadata.title}
           title={data.site.siteMetadata.title}
         />
