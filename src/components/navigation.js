@@ -38,7 +38,6 @@ export default () => (
         site {
           siteMetadata {
             title
-            logo
           }
         }
       }
@@ -46,7 +45,7 @@ export default () => (
     render={data => (
       <SiteHeader>
         <img
-          src={data.site.siteMetadata.logo}
+          src={logo}
           alt={data.site.siteMetadata.title}
           title={data.site.siteMetadata.title}
         />
