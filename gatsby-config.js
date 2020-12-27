@@ -139,7 +139,17 @@ module.exports = {
     },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-instagram-embed`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          `404`,
+          `/tags`,
+          `/tags/*`,
+        ]
+      },
+    },
+    
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
