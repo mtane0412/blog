@@ -9,6 +9,7 @@ const Preview = styled.div`
 `
 const PreviewTitle = styled.h3`
   font-size: 1.5em;
+  font-weight: normal;
 `
 
 export default ({ article }) => (

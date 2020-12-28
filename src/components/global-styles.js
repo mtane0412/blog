@@ -18,11 +18,16 @@ export const globalStyles = css`
     margin: 0;
   }
 
-  h1,
-  h2,
-  h3 {
+  h1 {
     font-size: 2em;
-    font-weight: normal;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
   }
 
   a {
