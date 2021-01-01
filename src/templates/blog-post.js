@@ -8,7 +8,6 @@ import 'prismjs/plugins/command-line/prism-command-line.css'
 import SEO from '../components/seo'
 import TagList from '../components/taglist'
 import PrevNext from '../components/prevnext'
-import Iframely from '../components/iframely'
 import styled from '@emotion/styled'
 
 const PostHeader = styled.div`
@@ -69,7 +68,6 @@ class BlogPostTemplate extends React.Component {
             />
           </div>
         </div>
-        <Iframely />
       </Layout>
     )
   }
