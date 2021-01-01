@@ -71,6 +71,7 @@ const amazonFetch = async (url, asin) => {
   return amazonPaapi
     .GetItems(commonParameters, requestParameters)
     .then((data) => {
+      console.log(`${url}の商品情報を取得します`);
       const updatedAt = new Date();
       const item = data.ItemsResult.Items[0];
       const title = item.ItemInfo.Title.DisplayValue;
