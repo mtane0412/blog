@@ -1,6 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+const amazonLinkTransformer = require('./src/utils/amazon-link-transformer.js');
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -127,6 +128,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-embedder`,
             options: {
+              customTransformers: [
+                amazonLinkTransformer
+              ],
               services: {
                 Instagram: {
                   accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
