@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -26,7 +26,7 @@ jobs:
           AMAZON_REGION: ${{ secrets.AMAZON_REGION}}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
           AMAZON_PARTNER_TYPE: ${{ secrets.AMAZON_PARTNER_TYPE}}
-      - name: Commit amazon-list.yaml
+      - name: Commit changes on amazon-list.yaml
         uses: EndBug/add-and-commit@v6
         with:
           add: 'content/amazon-list.yaml'
