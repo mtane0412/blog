@@ -20,6 +20,12 @@ jobs:
           CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.CONTENTFUL_DELIVERY_TOKEN }}
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY}}
+          AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY}}
+          AMAZON_HOST: ${{ secrets.AMAZON_HOST}}
+          AMAZON_REGION: ${{ secrets.AMAZON_REGION}}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          AMAZON_PARTNER_TYPE: ${{ secrets.AMAZON_PARTNER_TYPE}}
       - name: Publish
         uses: netlify/actions/cli@master
         with:
