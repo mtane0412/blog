@@ -29,10 +29,10 @@ const PrevNext = ({ prev, next }) => {
     <Wrapper>
         <Box>
             {next && (
-                <Link to={'../' + next.slug} style={{marginRight: 'auto', order: 1}}>&#8592; {next.title}</Link>
+                <Link to={`/${next.slug}/`} style={{marginRight: 'auto', order: 1}}>&#8592; {next.title}</Link>
             )}
             {prev && (
-                <Link to={'../' + prev.slug} style={{marginLeft: 'auto', order: 2}}>{prev.title} &#8594;</Link>
+                <Link to={`/${prev.slug}/`} style={{marginLeft: 'auto', order: 2}}>{prev.title} &#8594;</Link>
             )}
         </Box>
     </Wrapper>

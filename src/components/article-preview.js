@@ -16,7 +16,7 @@ export default ({ article }) => (
   <Preview>
     <Img alt="" fluid={article.heroImage.fluid} loading={"eager"} fadeIn={false} />
     <PreviewTitle>
-      <Link to={`/${article.slug}`}>{article.title}</Link>
+      <Link to={`/${article.slug}/`}>{article.title}</Link>
     </PreviewTitle>
     <time dateTime={article.datetime}>{article.publishDate}</time>
     <p>{article.description.childMarkdownRemark.excerpt}</p>
