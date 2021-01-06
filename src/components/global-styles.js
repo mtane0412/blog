@@ -11,7 +11,7 @@ export const globalStyles = css`
 
   body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-size: 1em;
+    font-size: 19px;
     line-height: 1.65;
     color: #373F49;
     background: #eee;
@@ -75,9 +75,10 @@ export const globalStyles = css`
   }
 
   p code {
-    padding: 0 .5em;
+    padding: .1em;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background-color: #eee;
+    border: 1px solid #ccc;
   }
   
   .gatsby-code-title {
