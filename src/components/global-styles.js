@@ -11,7 +11,7 @@ export const globalStyles = css`
 
   body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-size: 19px;
+    font-size: 1em;
     line-height: 1.65;
     color: #373F49;
     background: #eee;
