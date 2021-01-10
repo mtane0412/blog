@@ -18,6 +18,9 @@ const Box = styled.div`
     flex: 2;
     margin: 0;
     padding: 0;
+    a {
+      text-decoration: none;
+    }
   }
   ul {
     margin: 0;
@@ -76,7 +79,7 @@ class ArchivesIndex extends React.Component {
             {yearList.map(year => {
               return (
                 <Box key={`box${year}`}>
-                  <h3 key={`header${year}`}><Link to={`/archives/${year}/`}>{year}</Link></h3>
+                  <h3 key={`header${year}`}><Link to={`/archives/${year}/`}>{year}年 ({totalCounts[year]})</Link></h3>
                   <ul key={`list${year}`}>
                     {yearMonthList.map(yearMonth => {
                       if (year === yearMonth.split('/')[0]) {
