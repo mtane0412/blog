@@ -4,7 +4,7 @@ import get from "lodash/get";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-class BlogIndex extends React.Component {
+class TagsIndex extends React.Component {
   render() {
     const tags = get(this, "props.data.allContentfulTags.edges");
     const tagsGroup = get(this, "props.data.allContentfulBlogPost.group");
@@ -25,6 +25,7 @@ class BlogIndex extends React.Component {
                 );
               })}
             </ul>
+            <Link to={`../`}>HOME</Link>
           </div>
         </div>
       </Layout>
@@ -32,7 +33,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+export default TagsIndex;
 
 export const pageQuery = graphql`
   query TagIndexQuery {

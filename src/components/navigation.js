@@ -60,7 +60,7 @@ export default () => (
               <Link to="/">Home</Link>
             </NavigationItem>
             <NavigationItem>
-              <Link to="/blog/">Blog</Link>
+              <Link to="/archives/">Archives</Link>
             </NavigationItem>
             <NavigationItem>
               <Link to="/tags/">Tags</Link>
