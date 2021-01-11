@@ -43,9 +43,6 @@ export const pageQuery = graphql`
         totalCount
       }
     }
-    contentfulTags(slug: { eq: "bike" }) {
-      title
-    }
     allContentfulTags {
       edges {
         node {
