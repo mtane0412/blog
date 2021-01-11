@@ -43,12 +43,13 @@ export default ArchiveTemplate;
 
 export const archivePageQuery = graphql`
   query BlogPostsByDate($periodStartDate: Date!, $periodEndDate: Date!) {
-    allContentfulBlogPost(filter: {publishDate: {gte: $periodStartDate, lte: $periodEndDate}}) {
+    allContentfulBlogPost(filter: {publishDate: {gte: $periodStartDate, lte: $periodEndDate}}, sort: {fields: publishDate, order: DESC}) {
         edges {
           node {
             title
             slug
             publishDate(formatString: "YYYY年MM月DD日")
+            dateTime: publishDate
             tags {
                 title
                 slug

@@ -18,7 +18,7 @@ export default ({ article }) => (
     <PreviewTitle>
       <Link to={`/${article.slug}/`}>{article.title}</Link>
     </PreviewTitle>
-    <time dateTime={article.datetime}>{article.publishDate}</time>
+    <time dateTime={article.dateTime}>{article.publishDate}</time>
     <p>{article.description.childMarkdownRemark.excerpt}</p>
     <TagList tags={article.tags} />
   </Preview>

@@ -80,7 +80,7 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "YYYY年MM月DD日")
-      datetime: publishDate
+      dateTime: publishDate
       tags {
         title
         slug

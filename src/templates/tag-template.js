@@ -48,6 +48,7 @@ export const tagPageQuery = graphql`
             title
             slug
             publishDate(formatString: "YYYY年MM月DD日")
+            dateTime: publishDate
             tags {
                 title
                 slug
