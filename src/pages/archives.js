@@ -89,6 +89,7 @@ class ArchivesIndex extends React.Component {
                           </li>
                         )
                       }
+                      return null
                     })}
                   </ul>
                 </Box>
