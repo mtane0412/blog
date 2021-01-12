@@ -59,7 +59,6 @@ module.exports = {
     backgroundColor: backgroundColor,
     twitter: twitter,
   },
-  // pathPrefix: "/gatsby-contentful-starter",
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,

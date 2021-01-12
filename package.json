@@ -1,11 +1,11 @@
 {
-  "name": "contentful-starter-gatsby-blog",
-  "description": "Contentful Gatsby Starter Blog",
+  "name": "mtane0412.com",
+  "description": "mtane0412's blog with Gatsby and Contentful",
   "private": true,
   "version": "0.0.1",
-  "author": "Contentful <opensource@contentful.com>",
+  "author": "mtane0412 <mtane0412@gmail.com>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://github.com/mtane0412/blog/issues"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
