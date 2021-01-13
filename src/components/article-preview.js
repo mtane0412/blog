@@ -8,7 +8,7 @@ const Preview = styled.div`
   text-align: center;
 `
 const PreviewTitle = styled.h3`
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: normal;
 `
 
