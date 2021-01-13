@@ -74,7 +74,7 @@ export const globalStyles = css`
     display: inline-block;
   }
 
-  p code {
+  p code, li code {
     padding: .1em;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background-color: #eee;
