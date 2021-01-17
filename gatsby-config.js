@@ -149,6 +149,8 @@ module.exports = {
           `404`,
           `/tags`,
           `/tags/*`,
+          `/archives/`,
+          `/archives/*`,
         ]
       },
     },
