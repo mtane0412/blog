@@ -14,7 +14,7 @@ export const globalStyles = css`
     font-size: 18px;
     line-height: 1.65;
     color: #373F49;
-    background: #eee;
+    background: #fff;
     margin: 0;
   }
 
@@ -35,7 +35,7 @@ export const globalStyles = css`
   }
 
   .wrapper {
-    width: calc(100% - 10vmin);
+    max-width: 680px;
     margin: 0 auto;
     padding: 5vmin 0;
   }
